@@ -1,4 +1,4 @@
-name: Test the Lab 1 of Code
+name: Test the Lab 1 of code
 on: push
 jobs:
   test-syntax-lab1:
