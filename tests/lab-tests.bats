@@ -6,10 +6,6 @@ setup() {
   load "$DIR/test_helper/bats-assert/load"
 }
 
-@test "this is a test" {
-
-}
-
 @test "addition.sh: 5 + 5 equals 10" {
   run addition.sh 5 5
   assert_success
