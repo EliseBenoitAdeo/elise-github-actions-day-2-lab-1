@@ -17,5 +17,5 @@ jobs:
       - name: custom run with all inputs
         uses: ./.
         with:
-          say: GitHub Action Rocks
-          eyes: o-
+          say: Coucou les Gros !
+          eyes: oo
