@@ -13,4 +13,4 @@ jobs:
 
       # Check the Job summary to see the notice message
       - run: |
-          echo "${{ steps.upper_action.outputs.upper_text }}"
+          echo "::notice ::${{ steps.upper_action.outputs.upper_text }}"
