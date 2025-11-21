@@ -7,7 +7,7 @@ inputs:
 outputs:
   upper_text:
     description: Text in uppercase
-    value: ${{ steps.upper_step.outputs.result }}
+    value: ${{ steps.upper_step.outputs.upper_text }}
 runs:
   using: "composite"
   steps:
