@@ -1,18 +1,19 @@
-name: 'Syntax:Lab1'
-description: 'Action of Lab1 in Syntax section'
+name: 'Syntax:Lab2'
+description: 'Action of Lab2 in Syntax section'
 inputs:
-  say:
-    description: 'What to say'
+  text:
+    description: Text that will be uppercased
     required: true
-    default: 'Hello from GitHub Actions'
-  eyes:
-    description: 'The eyes of the cow'
-    required: false
-    default: 'oo'
+outputs:
+  upper_text:
+    description: Text in uppercase
+    value: ${{ steps.upper_step.outputs.result }}
 runs:
-  using: 'docker'
-  image: 'docker://rancher/cowsay:latest'
-  args:
-    - -e
-    - ${{ inputs.eyes }}
-    - ${{ inputs.say }}
+  using: 'composite'
+  steps:
+    - id: upper_step
+      run: |
+        echo "${INPUT_TEXT^^}"
+      env:
+        INPUT_TEXT: ${{ inputs.text }}
+      shell: bash
