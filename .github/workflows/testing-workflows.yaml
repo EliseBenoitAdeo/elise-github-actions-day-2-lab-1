@@ -10,6 +10,6 @@ jobs:
 
       - name: bats test
         run: |
-          echo "run test..."
+          chmod +x scripts/*.sh
           ./tests/bats/bin/bats tests/lab-tests.bats
         shell: bash
