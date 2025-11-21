@@ -1,5 +1,18 @@
 name: 'Syntax:Lab1'
 description: 'Action of Lab1 in Syntax section'
+inputs:
+  say:
+    description: 'What to say'
+    required: true
+    default: 'Hello from GitHub Actions'
+  eyes:
+    description: 'The eyes of the cow'
+    required: false
+    default: '^^'
 runs:
   using: 'docker'
   image: 'docker://rancher/cowsay:latest'
+  args:
+    - -e
+    - ${{ inputs.eyes }}
+    - ${{ inputs.say }}
