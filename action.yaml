@@ -9,11 +9,11 @@ outputs:
     description: Text in uppercase
     value: ${{ steps.upper_step.outputs.result }}
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - id: upper_step
       run: |
-        echo "${INPUT_TEXT^^}"
+        echo "upper_text=${INPUT_TEXT^^}" >> $GITHUB_OUTPUT
       env:
         INPUT_TEXT: ${{ inputs.text }}
       shell: bash
